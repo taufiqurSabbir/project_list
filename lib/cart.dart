@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Cart extends StatefulWidget {
-  const Cart({Key? key}) : super(key: key);
+class Cart extends StatelessWidget {
+  final int Total_product;
+  const Cart({Key? key, required this.Total_product}) : super(key: key);
 
-  @override
-  State<Cart> createState() => _CartState();
-}
-
-class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,14 +11,13 @@ class _CartState extends State<Cart> {
         title: Text('Cart'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('dfdf'),
-          ],
-        ),
-      ),
+
+      body: Center(child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('Total product: ${Total_product}'),
+        ],
+      )),
     );
   }
 }
